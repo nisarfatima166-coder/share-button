@@ -1,0 +1,99 @@
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background: #0984e3;
+    font-family:Arial, sans-serif;
+}
+
+/* Hide checkbox */
+#toggle-share{
+    display:none;
+}
+
+/* Container */
+.share-container{
+    position:relative;
+}
+
+/* Share / Cancel Button */
+.share-btn{
+    display: block;
+    background: #fff;
+    color: #0984e3;
+    padding:10px 20px;
+    border:none;
+    cursor:pointer;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+/* Change text to Cancel when checkbox is checked */
+#toggle-share:checked + .share-btn::after{
+    content:"CANCEL";
+}
+
+/* Default Share text */
+.share-btn::after{
+    content:"SHARE";
+}
+
+/* Social Icons Container */
+.social-icons{
+    position:absolute;
+    top:50px;
+    left:0;
+    display:flex;
+    gap:5px;
+    opacity:0;
+    pointer-events:none;
+    transition:0.3s;
+}
+
+/* Show icons when checkbox checked */
+#toggle-share:checked ~ .social-icons{
+    opacity:1;
+    pointer-events:auto;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0984e3;
+    height: 60px;
+    width: 200px;
+    border-radius: 35px;
+    
+    
+   
+}
+
+/* Social icon styles */
+.social-icons a{
+    
+    display:flex;
+    
+    justify-content:center;
+    align-items:center;
+    width:40px;
+    height:40px;
+    background:#555;
+    color: #0984e3;
+    border-radius:80%;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    transform:scale(1.2);
+    background:#333;
+}
+
+/* Individual icon colors */
+.social-icons a.facebook,
+.social-icons a.twitter,
+.social-icons a.instagram,
+.social-icons a.youtube{
+    background: #fff;
+    box-sizing: 10px 20px;
+    
+}
